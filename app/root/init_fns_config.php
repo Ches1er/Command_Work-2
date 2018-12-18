@@ -1,2 +1,2 @@
 <?php
-return ["auth", "view", "redirect"];
+return ["auth", "view", "redirect","records"];

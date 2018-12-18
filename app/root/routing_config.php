@@ -6,5 +6,6 @@ return [
     "/logout" => "login@logout",
     "/login/handle" => "login@loginhandle",
     "/register/handle" => "login@registerhandle",
-    "/contacts" => "main@contacts"
+    "/contacts" => "main@contacts",
+    "addcat"=>"records@addcat"
 ];

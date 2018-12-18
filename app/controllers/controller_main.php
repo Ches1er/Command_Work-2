@@ -1,14 +1,9 @@
 <?php
 function action_index(){
-
-    return renderViewWithTemplate("main","default",[
+    $data = [
         "title"=>"Главная",
-        "user"=>auth_currentUser()
-    ]);
-}
-function action_contacts(){
-    $data=[];
-    $data["title"]="Контакты";
-
-    return renderViewWithTemplate("contacts","default",$data);
+        "currentUser"=>auth_currentUser(),
+        "categories"=>rec_getCategories()
+    ];
+    return renderViewWithTemplate("main","default",$data);
 }

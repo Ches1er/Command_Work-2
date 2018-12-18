@@ -34,6 +34,13 @@ function  _auth_create_user_session($user){
     $_SESSION["user_agent"]=md5($_SERVER["HTTP_USER_AGENT"]);
 }
 
+function _insert_user_to_the_record($data,$file){
+    $arr = fs_getAll($file);
+    $arr[] = $data;
+    fs_saveFile($arr,$file);
+}
+
+
 
 function auth_register($name,$pass){
     if(_auth_getUserByLogin($name)!==NULL) return false;
@@ -42,6 +49,11 @@ function auth_register($name,$pass){
         "pass"=>_auth_hash_pass($pass)
     ];
     _auth_insertUser($user);
+    $records=[
+        "user"=>$name,
+        "categories"=>[]
+    ];
+    _insert_user_to_the_record($records,"records");
     return true;
 }
 
