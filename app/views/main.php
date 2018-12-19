@@ -3,6 +3,7 @@
     <div>Вы авторизованы</div>
     <div class="main_user">Main user:<?=$currentUser["login"]?></div>
     <a href="/logout" class="logout">Logout</a>
+    <div class="error"><?=$error?></div>
     <form action="/addcat" method="post">
         <dl>
             <dt><input type="text" name="cat_name"></dt>

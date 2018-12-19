@@ -1,8 +1,30 @@
 <?php
 
+        //SUPPORT FNS
+
 function _rec_save_data($data){
     fs_saveFile($data,"records");
 }
+
+function _rec_getFiles_(){
+    $records=fs_getAll("records");
+    foreach ($records as $record){
+        if ($record["user"]===auth_currentUser()["login"]){
+            return $record["categories"][$_SESSION["current_cat_name"]];
+        }
+    }
+    return NULL;
+}
+
+function _rec_getFileMatch($filename){
+    $files = _rec_getFiles_();
+    foreach ($files as $file=>$value){
+        if ($file===$filename)return true;
+    }
+    return false;
+}
+
+        //CATALOGUES
 
 function rec_getCategories(){
     $records = fs_getAll("records");
@@ -13,7 +35,20 @@ function rec_getCategories(){
     }
 }
 
+function _rec_getCatMatch($new_cat_name){
+    $cat_array = rec_getCategories();
+    foreach ($cat_array as $old_cat_name=>$value){
+        if ($old_cat_name===$new_cat_name)return true;
+    }
+    return false;
+}
+
 function rec_addCat($catname){
+    if (_rec_getCatMatch($catname)){
+        _auth_sessionAutostart();
+        $_SESSION["error"]="This catalogue's already exists";
+        return false;
+    }
     $records = fs_getAll("records");
     foreach ($records as &$record){
         if ($record["user"]===auth_currentUser()["login"]){
@@ -21,12 +56,18 @@ function rec_addCat($catname){
         }
     }
     _rec_save_data($records);
-    return true;
 }
 
         //FILES
 
 function rec_addFile($filename,$filevalue){
+
+    if (_rec_getFileMatch()){
+        _auth_sessionAutostart();
+        $_SESSION["error"]="This file`s already exists";
+        return false;
+    }
+
     $records=fs_getAll("records");
     foreach ($records as &$record){
         if ($record["user"]===auth_currentUser()["login"]){
