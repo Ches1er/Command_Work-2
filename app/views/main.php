@@ -11,7 +11,7 @@
     </form>
 
 <?php endif;?>
-<? if($currentUser===NULL):?>
+<?php if($currentUser===NULL):?>
     <div class="main_user">Main user:No active users</div>
     <a href="/login">Login</a>
     <a href="/register">SignUp</a>
