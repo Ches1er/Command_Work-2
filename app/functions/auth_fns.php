@@ -2,6 +2,8 @@
 include_once FNSPATH."file_storage_fns.php";
 define("USERSFILEPATH","users");
 
+        //SUPPORT FNS
+
 function _auth_getAllUsers(){
     return fs_getAll(USERSFILEPATH);
 }
@@ -22,7 +24,6 @@ function _auth_sessionAutostart(){
     if(session_status()!=PHP_SESSION_ACTIVE) session_start();
 }
 
-
 function _auth_hash_pass($pass){
     return hash("sha256",$pass);
 }
@@ -40,7 +41,7 @@ function _insert_user_to_the_record($data,$file){
     fs_saveFile($arr,$file);
 }
 
-
+        //AUTH FNS
 
 function auth_register($name,$pass){
     if(_auth_getUserByLogin($name)!==NULL) return false;
@@ -49,6 +50,9 @@ function auth_register($name,$pass){
         "pass"=>_auth_hash_pass($pass)
     ];
     _auth_insertUser($user);
+
+    //Adding to the records.json new record about just registered user
+
     $records=[
         "user"=>$name,
         "categories"=>[]
