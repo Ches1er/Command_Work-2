@@ -5,7 +5,9 @@
 header{
     width: 960px;
     margin: 0 auto;
-    background-color: #ccc;
+    background-color: #2F4F4F;
+    color: white;
+    font-size: 28px;
 }
 header h1{
     line-height: 100px;
@@ -18,42 +20,203 @@ nav ul li{
     display: inline-block;
     padding: 0 10px;
 }
-nav ul li a{
-    display: block;
-    height: 50px;
-    line-height: 50px;
-    text-align: center;
-    background-color: #777;
-    color: white;
-    padding: 0 20px;
-    text-decoration: none;
-}
+
 section{
     width: 960px;
     margin: 0 auto;
+    background-color: #2F4F4F;
+    color: white;
 }
-.note{
-    width: 500px;
-    background-color: #ccc;
+.category{
+    width: 350px;
+    height: 30px;
     border-radius: 5px;
     padding: 10px;
-    margin-bottom: 10px;
     position: relative;
-}
-.note .del{
-    position: absolute;
-    right: 0;
-    top: 0;
-    width: 30px;
-    height: 30px;
-    background-color: #f00;
+    border: 2px solid black;
+    margin-bottom: 5px;
+    background-color: #2F4F4F;
     color: white;
-    line-height: 30px;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 20px;
+}
+.category .del{
+    position: absolute;
+    right: 60px;
+    top: 10px;
+    width: 45px;
+    height: 25px;
+    line-height: 25px;
+    background-color: #778899;
+    color: white;
+    font-size: 10px;
     text-align: center;
+    padding: 3px;
+    border-radius: 5px;
+
+
+}
+.file{
+    width: 470px;
+    border-radius: 5px;
+    padding: 10px;
+    position: relative;
+    border: 2px solid black;
+    margin-bottom: 5px;
+    background-color: #2F4F4F;
+    color: white;
+
+
+}
+.key{
+    width: 390px;
+    color: white;
+    border-radius: 5px;
+    border: 1px solid white;
+    margin-bottom: 1px;
+    word-wrap:break-word;
+    padding: 3px;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 12px;
+
+}
+.value{
+    font-size: 8px;
+    text-transform: none;
+    font-weight: normal;
+}
+.file .del{
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    width: 45px;
+    height: 25px;
+    line-height: 25px;
+    background-color: #778899;
+    color: white;
+    font-size: 10px;
+    text-align: center;
+    padding: 3px;
+    border-radius: 5px;
+
+
+}
+.category .view{
+    position: absolute;
+    right: 5px;
+    top: 10px;
+    width: 38px;
+    height: 25px;
+    background-color: #778899;
+    color: white;
+    font-size: 10px;
+    line-height: 25px;
+    text-align: center;
+    padding: 3px;
+    border-radius: 5px;
+
 
 }
 
 .error {
     color: red;
     font-size: 20px;
+}
+.content{
+    width: 960px;
+    margin: 0 auto;
+    display: flex;
+    flex-flow: row nowrap;
+}
+.left{
+    padding: 10px;
+    width: 400px;
+    height: 500px;
+    background-color: white;
+    overflow: auto;
+    margin:10px;
+    border-radius: 5px;
+}
+.right{
+    padding: 10px;
+    width: 540px;
+    height: 500px;
+    background-color: white;
+    margin:10px;
+    overflow: auto;
+    border-radius: 5px;
+
+
+}
+a{
+    display: block;
+    width: 70px;
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+    background-color: #778899;
+    border-radius: 5px;
+}
+.logout{
+    margin-right: 10px;
+}
+.main_user{
+    width: 960px;
+    height: 35px;
+    line-height: 35px;
+    display: flex;
+    justify-content: flex-end;
+}
+.add{
+    margin: 10px 10px 10px 0;
+    width: 220px;
+    height: 30px;
+    line-height: 30px;
+    border: 2px solid #2F4F4F;
+    border-radius: 5px;
+
+}
+.addfile{
+    margin: 10px;
+    width: 346px;
+    height: 30px;
+    line-height: 30px;
+    margin-left: 0;
+    border: 2px solid #2F4F4F;
+    color:#2F4F4F ;
+    border-radius: 5px;
+
+
+}
+.addsub{
+
+    width: 130px;
+    height: 30px;
+    line-height: 30px;
+    background-color: #778899;
+    border-radius: 5px;
+}
+textarea{
+    opacity: 0.2;
+    margin-bottom: 20px;
+    color:#2F4F4F ;
+    width: 490px;
+    height: 35px;
+    border: 2px solid #2F4F4F;
+
+}
+.select{
+    width: 470px;
+    border-radius: 5px;
+    padding: 10px;
+    position: relative;
+    border: 2px solid black;
+    margin-bottom: 5px;
+    color: #2F4F4F;
+
 }
