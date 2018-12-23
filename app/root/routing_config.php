@@ -7,5 +7,9 @@ return [
     "/login/handle" => "login@loginhandle",
     "/register/handle" => "login@registerhandle",
     "/contacts" => "main@contacts",
-    "addcat"=>"records@addcat"
+    "addcat"=>"records@addcat",
+    "/delcat"=>"records@delcat",
+    "/viewcat"=>"records@viewcat",
+    "/addfile"=>"records@addfile",
+    "/delfile"=>"records@delfile"
 ];
