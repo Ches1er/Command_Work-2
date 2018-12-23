@@ -3,8 +3,9 @@ function action_index(){
     $data = [
         "title"=>"Главная",
         "currentUser"=>auth_currentUser(),
-        "error"=>$_SESSION["error"],
-        "categories"=>rec_getCategories()
+        "categories"=>rec_getCategories(),
+        "files"=>rec_showCat(),
     ];
     return renderViewWithTemplate("main","default",$data);
 }
+
