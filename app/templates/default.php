@@ -10,12 +10,8 @@
 </head>
 <body>
 <header>
-    <h1>MySite</h1>
-    <nav>
-        <ul>
-            <li><a href="/">main</a></li>
-        </ul>
-    </nav>
+    <h1>KeyStore</h1>
+
 </header>
 <section>
     <?=$content?>
