@@ -5,7 +5,8 @@ function action_index(){
         "currentUser"=>auth_currentUser(),
         "categories"=>rec_getCategories(),
         "files"=>rec_showCat(),
-        "error"=>@$_SESSION["error"]
+        "error"=>@$_SESSION["error"],
+        "curcategory"=>@$_SESSION["current_cat_name"]
 
     ];
     return renderViewWithTemplate("main","default",$data);
