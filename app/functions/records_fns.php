@@ -20,7 +20,7 @@ function _rec_getFileMatch($filename){
     foreach ($files as $file=>$value){
         if ($file===$filename){
             _auth_sessionAutostart();
-            $_SESSION["error"]="This file's already exists";
+            $_SESSION["error"]="Cant add new file, this file's already exists";
             return true;
         }
     }
@@ -43,7 +43,7 @@ function _rec_getCatMatch($new_cat_name){
     foreach ($cat_array as $old_cat_name=>$value){
         if ($old_cat_name===$new_cat_name){
             _auth_sessionAutostart();
-            $_SESSION["error"]="This catalogue's already exists";
+            $_SESSION["error"]="Cant add new catalogue, this catalogue's already exists";
             return true;
         }
     }
@@ -58,6 +58,7 @@ function rec_addCat($catname){
             $record["categories"][$catname]=[];
         }
     }
+    $_SESSION["error"]="";
     _rec_save_data($records);
 }
 //Putting current catalogue into session
@@ -100,6 +101,7 @@ function rec_addFile($filename,$filevalue)
             $record["categories"][$_SESSION["current_cat_name"]][$filename] = $filevalue;
         }
     }
+    $_SESSION["error"]="";
     _rec_save_data($records);
 }
 //Del file from the current catalogue

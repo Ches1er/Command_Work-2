@@ -10,7 +10,11 @@
             <div class="main_user">User:<?=$currentUser["login"]?>
                 <a href="/logout" class="logout">Logout</a>
             </div>
+            <?php if (!empty($error)):?>
+                <div class="error"><?=$error?></div>
+            <?php endif;?>
         <div class="content">
+
             <div class="left">
             <form action="/addcat" method="post">
                 <dl>
@@ -19,6 +23,7 @@
                     </dt>
                 </dl>
             </form>
+
 <?php foreach ($categories as $key=>$category):?>
     <div class="category">
         <div class="catName"><?=$key?></div>
