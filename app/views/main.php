@@ -33,6 +33,7 @@
 <?php endforeach;?>
 
     </div>
+            <?php if ($curcategory!==NULL):?>
     <div class="right">
         <div class="select">Selected Category: <?php if (!empty($_SESSION["current_cat_name"]))echo $_SESSION["current_cat_name"]?></div>
         <form action="/addfile" method="post">
@@ -55,3 +56,4 @@
     </div>
 </div>
         <?php endif;?>
+<?php endif;?>
